@@ -1,35 +1,50 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { render } from 'react-dom';
-import './style.css';
+return ( 
+  <div className="App">
+    <header>
+    <form onSubmit={messageSubmit}>                  
+      <TextField   
+        style={{ margin: '20px' }}              
+        borderColor="red"
+        color="green"
+        fullWidth
+        required
+        autoFocus        
+        placeholder="Введите сообщение"          
+        value={inputValue}
+        onChange={messageUpdate}
+      />  
+      <Button
+        style={{ margin: '20px' }}
+        variant="contained"
+        color="primary">        
+        Отправить
+      </Button>
+    </form>      
+    <div>
+      {messageList.map((message, index) => (
+        <TextMessage
+        key={index}
+        author={message.author}
+        text={message.text}
+        />        
+      ))}    
+    </div> 
+    </header>
 
-const App = () => {
 
-    const [name, setName] = useState('React');
-    const [coords, setCoords] = useState([]);
+    
+  </div>
+);
 
-    const success = (position) => {
-        // setCoords(coords.concat(position.coords))
-        setCoords([
-            ...coords,
-            position.coords
-        ])
-        console.log("success! position=", position);
-    }
-
-    useEffect(() => {
-        console.log("useEffect -> coords =", coords);
-    });
-
-    useEffect(() => {
-        setInterval(() => {
-            success({coords : {latitude: Math.random()*51, longitude: Math.random()*2.6}});
-        }, 5000);
-    }, []);
-
-    return (
-    <p>example to demonstrate growing an array stored with React usestate hook</p>
-    )
+export const AppList = (props) => {
+  return (
+      <List>
+          { props.items.map((item, key) => {
+              return <ListItem
+               primaryText={ item.id }
+               secondaryText={ item.name }
+              />
+          })}            
+      </List>
+  )
 }
-
-render(<App />, document.getElementById('root'));
