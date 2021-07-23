@@ -1,14 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import { AUTHORS } from './Constants'
+import Input from '../Input/Input'
 import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import './App.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
- 
- const theme = createMuiTheme({
+
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#6170fb",
@@ -17,8 +18,8 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
       main: "#0098FF",
     },
   },
- });
- 
+});
+
 
 function TextMessage(props) {
   return <p>{props.author}: {props.text}</p>
@@ -58,66 +59,30 @@ function App() {
     setInputValue('')
   };
 
-  const messageUpdate = (e) => {
-    setInputValue(e.target.value)
+  const handleMessageSubmit = (newMessageText) => {
+    setMessageList((currentMessageList) => [
+      ...currentMessageList,
+      { author: AUTHORS.ME, text: newMessageText },
+    ])
   }
-
-  const handleMessageChange = (e) => {
-    setInputValue(e.target.value)
-}
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Здравствуйте, Мария! Практическое задание к уроку 3.
-      </p>
-      <div className="Menu_dz3">
-      <div className="Message_border">
-        <List subheader="Список чатов">
-          {chats.map((chat) => (
-            <ListItem
-              button                         
-              key={chat.id}
-              selected={chat.id === currentChat.id}
-              onClick={() => handleChangeChat(chat)}>
-              {chat.name}
-            </ListItem>
-          ))}
-        </List>
+      <div className="App-header">
+        <div className="Menu_dz3">
+          <Input className="Message_border" onSubmit={handleMessageSubmit} />
+          <div className="Message_border">
+            {messageList.map((message, index) => (
+              <TextMessage
+                clasname={"Menu_chat"}
+                key={index}
+                author={message.author}
+                text={message.text}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <form className="Message_border Left_right" onSubmit={messageSubmit}>
-        <TextField
-          color='primary'
-          fullWidth
-          required
-          autoFocus
-          placeholder="Введите сообщение"
-          value={inputValue}
-          onChange={messageUpdate}         
-          margin="normal"
-          variant="filled"
-        />
-        <Button
-          type="submit" 
-          style={{ margin: '20px' }}
-          variant="contained"
-          color="primary">
-          Отправить
-        </Button>
-      </form>
-      <div className="Message_border">
-        {messageList.map((message, index) => (
-          <TextMessage
-            key={index}
-            author={message.author}
-            text={message.text}
-          />
-        ))}
-      </div>
-      </div>
-    </div >
     </ThemeProvider>
   );
 
