@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);  
 }
 
 .App-link {
@@ -37,13 +37,52 @@
   }
 }
 
-.Message_border { 
-  color: #61dafb;
-  border: 3px solid #61dafb;
-  border-radius: 12px;
+.Message_border {
+  width: 300px; 
+  height: 300px;
+  border: 3px solid #61e4fb;
+  border-radius: 12px;  
+  font-size: 20px;   
+  background-color: #61d2fb;
 }
 
-.MessageClass_border { 
-  border: 2px solid red;
+.Left_right { 
+  margin-left: 50px;  
+  margin-right: 50px;    
+}
+
+.Menu_dz3 {
+  background-color: #282c34;  
+  display: flex;    
+  color: #282c34;
+  justify-content: space-between;
+}
+.Menu_chat {   
+  width: 300px; 
+  height: 300px;  
+  border: 3px solid #61a4fb;
+  border-radius: 12px;  
+  font-size: 20px;    
+  background-color: #61e4fb;
+  color: #282c34;
+}
+
+.MessageButton { 
   border-radius: 8px;
-}     
+  height: 28px; 
+  font-size: 24px;  
+}
+
+.app__form {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.bordered {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  margin-top: 24px;
+}
