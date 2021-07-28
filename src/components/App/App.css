@@ -72,6 +72,11 @@
   margin-right: 50px;    
 }
 
+.centre {
+  text-align: center;
+  color: #61d2fb;
+}
+
 .Menu_dz3 {
   background-color: #282c34;  
   display: flex;    

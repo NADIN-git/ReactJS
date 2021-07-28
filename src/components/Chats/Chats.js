@@ -1,13 +1,7 @@
 import React from 'react';
-//import logo from './logo.svg';
-//import './App.css';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-//import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Link } from 'react-router-dom'
-import ChatItem from './ChatItem'
-//import { Switch, Route } from 'react-router'
-
 
 const Chats = () => {
   const menuChats = [
