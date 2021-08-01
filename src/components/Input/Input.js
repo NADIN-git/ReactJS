@@ -3,7 +3,7 @@ import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 
 const Input = (props) => {
-  const { onSubmit } = props
+  const { onSubmit } = props 
   const [inputValue, setInputValue] = React.useState('')
 
   const messageSubmit = (e) => {
@@ -27,7 +27,7 @@ const Input = (props) => {
           fullWidth
           required
           autoFocus
-          placeholder="Введите сообщение"
+          placeholder={ props.placeholder }
           value={inputValue}
           onChange={messageUpdate}
           margin="normal"
@@ -37,8 +37,8 @@ const Input = (props) => {
           type="submit"
           style={{ margin: '20px' }}
           variant="contained"
-          color="primary">
-          Отправить
+          color="primary"
+          > { props.nameButton }
         </Button>
       </form>
     </div>

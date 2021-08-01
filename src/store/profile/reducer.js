@@ -1,4 +1,4 @@
-import { CHANGE_IS_ONLINE, CHANGE_NAME } from '../actions/profile'
+import { CHANGE_IS_ONLINE, CHANGE_NAME } from './actions'
 
 const initialState = {
     surname: "",
