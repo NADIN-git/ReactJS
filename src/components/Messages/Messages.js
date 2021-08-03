@@ -3,7 +3,7 @@ import Input from '../Input/Input'
 import { Redirect, useParams } from 'react-router'
 import { AUTHORS } from '../App/Constants'
 import { useDispatch, useSelector } from 'react-redux'
-import { addMessage } from '../../store/messages/actions'
+import { addMessage, addMessageWithThunk } from '../../store/messages/actions'
 import List from '@material-ui/core/List';
 import { useIsChatExists } from '../../hooks/useIsChatExists'
 import { getMesages } from "../../store/messages/selectors";
@@ -11,8 +11,8 @@ import { getMesages } from "../../store/messages/selectors";
 
 const Messages = (props) => {
   const { chatId } = useParams()
-  const dispatch = useDispatch()  
-  const messageList = useSelector(getMesages({ chatId }));  
+  const dispatch = useDispatch()
+  const messageList = useSelector(getMesages({ chatId }));
 
   const handleMessageSubmit = (newMessageText) => {
     dispatch(
@@ -21,17 +21,21 @@ const Messages = (props) => {
         author: AUTHORS.NADIN,
         text: newMessageText,
       })
-    )
-    setTimeout(() => {
-      dispatch(
-        addMessage(chatId, {
-          id: `message${Date.now()}`,
-          author: AUTHORS.MARI,
-          text: "Привет",
-        })
-      )
-    }, 1000)
+    )    
+    dispatch(addMessageWithThunk(chatId, {
+      id: `message${Date.now()}`,
+      author: AUTHORS.MARI,
+      text: "Привет",
+    })
+  )    
   }
+
+  //const onAddMessage = useCallback((message) => {
+  //    dispatch(addMessageWithThunk(chatId, message));
+  //  }, [chatId, dispatch]);  
+
+
+
   const isChatExists = useIsChatExists({ chatId })
 
   if (!isChatExists) {

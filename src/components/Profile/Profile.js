@@ -14,6 +14,7 @@ const Profile = (props) => {
 
   const handleViewCheckbox = (event) => {
     dispatch(changeViewCheckbox(event.target.checked))
+    //dispatch(changeViewCheckboxWithThunk(event.target.checked))
     if (event.target.checked) {
       dispatch(changeName("Колотилова", "Надежда", "Викторовна"))
     }
