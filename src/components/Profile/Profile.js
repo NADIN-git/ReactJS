@@ -24,30 +24,33 @@ const Profile = (props) => {
   }
 
   return (
-    <div>
-      <p className="centre">Профиль</p>
-      <div className="Menu_chat">
-        <p>
-          <b>Фамилия: </b>
-          {surname}
-        </p>
-        <p>
-          <b>Имя: </b>
-          {name}
-        </p>
-        <p>
-          <b>Отчество: </b>
-          {patronymic}
-        </p>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={viewCheckbox}
-              onChange={handleViewCheckbox}
-            />
-          }
-          label={<p>Показать параметры</p>}
-        />
+    <div className="centre">
+      <div>
+
+        <p>Профиль</p>
+        <div className="Message_border Left_right">
+          <p>
+            <b>Фамилия: </b>
+            {surname}
+          </p>
+          <p>
+            <b>Имя: </b>
+            {name}
+          </p>
+          <p>
+            <b>Отчество: </b>
+            {patronymic}
+          </p>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={viewCheckbox}
+                onChange={handleViewCheckbox}
+              />
+            }
+            label={<p>Показать параметры</p>}
+          />
+        </div>
       </div>
     </div>
   );

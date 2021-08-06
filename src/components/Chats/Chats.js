@@ -26,28 +26,29 @@ const Chats = () => {
 
   return (
     <div className="Menu_dz3">
-      <div className="Menu_chat">
-        <List subheader={<p>Список чатов</p>}>
-          {Object.values(chats).map((chat) => (
-            <div className="chats__sidebar__item" key={chat.id}>
-              <ListItem
-                button
-                component="a"
-                onClick={() => handleChatLinkClick(chat)}
-              >
-                {chat.name}
-              </ListItem>
-
-            </div>
-          ))}
-        </List>
-      </div>      
-        <Input
-          nameButton="Добавить чат"
-          label="Имя чата"
-          placeholder="Введите имя чата"
-          onSubmit={handleAddChat}>         
-        </Input>        
+      <div>
+        <div className="Message_border">
+          <List subheader={<p>Список чатов</p>}>
+            {Object.values(chats).map((chat) => (
+              <div key={chat.id}>
+                <ListItem
+                  button
+                  component="a"
+                  onClick={() => handleChatLinkClick(chat)}
+                >
+                  {chat.name}
+                </ListItem>
+              </div>
+            ))}
+          </List>
+        </div>
+      </div>
+      <Input
+        nameButton="Добавить чат"
+        label="Имя чата"
+        placeholder="Введите имя чата"
+        onSubmit={handleAddChat}>
+      </Input>
     </div>
   );
 }

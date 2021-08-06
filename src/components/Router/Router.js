@@ -6,14 +6,17 @@ import Home from '../App/Home'
 import Chats from '../Chats/Chats'
 import Messages from '../Messages/Messages'
 import Profile from '../Profile/Profile'
+import News from '../News/News'
 
 export default function Router() {
     return (
         <div className="App-header">
+            
             <div className="bordered">
                 <Link to="/" className="Message_chats">Home</Link>
                 <Link to="/chats" className="Message_chats">Chats</Link>
                 <Link to="/profile" className="Message_chats">Profile</Link>
+                <Link to="/news" className="Message_chats">Gists</Link>
             </div>
 
             <Switch>
@@ -25,6 +28,7 @@ export default function Router() {
 
                 <Route path="/profile" component={Profile} />
 
+                <Route path="/news" component={News} />
 
                 <Route>
                     <p>404: not found</p>

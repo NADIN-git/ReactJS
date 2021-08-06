@@ -2,6 +2,7 @@
 import profileReducer from './store/profile/reducer'
 import chatsReducer from './store/chats/reducer'
 import messageReducer from './store/messages/reducer'
+import newsReducer from './store/news/reducer'
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import { persistReducer, persistStore } from 'redux-persist'
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     chats: chatsReducer,
     message: messageReducer,
+    news: newsReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

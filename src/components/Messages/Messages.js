@@ -30,12 +30,7 @@ const Messages = (props) => {
   )    
   }
 
-  //const onAddMessage = useCallback((message) => {
-  //    dispatch(addMessageWithThunk(chatId, message));
-  //  }, [chatId, dispatch]);  
-
-
-
+  
   const isChatExists = useIsChatExists({ chatId })
 
   if (!isChatExists) {
