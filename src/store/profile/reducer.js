@@ -1,10 +1,11 @@
-import { CHANGE_IS_ONLINE, CHANGE_NAME } from './actions'
+import { CHANGE_IS_AUTHED, CHANGE_IS_ONLINE, CHANGE_NAME } from './actions'
 
 const initialState = {
     surname: "",
     name: "",
-    patronymic: "",    
-    viewCheckbox: false,    
+    patronymic: "",
+    viewCheckbox: false,
+    isAuthed: false,
 }
 
 
@@ -22,6 +23,12 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 viewCheckbox: action.payload.viewCheckbox,
+            }
+        }
+        case CHANGE_IS_AUTHED: {
+            return {
+                ...state,
+                isAuthed: action.payload.isAuthed,
             }
         }
         default:

@@ -3,20 +3,21 @@ import { Checkbox } from "@material-ui/core";
 import { FormControlLabel } from "@material-ui/core";
 import { useDispatch, useSelector } from 'react-redux'
 import { changeViewCheckbox } from '../../store/profile/actions'
-import { changeName } from '../../store/profile/actions'
+import { changeName, addProfilToDatabase, subscribeOnProfilChangings } from '../../store/profile/actions'
 import { getProfile } from "../../store/profile/selectors";
 
 const Profile = (props) => {
 
-  const dispatch = useDispatch()
-
   const { surname, name, patronymic, viewCheckbox } = useSelector(getProfile);
 
-  const handleViewCheckbox = (event) => {
+  const dispatch = useDispatch()
+
+  const handleViewCheckbox = (event,surname, name, patronymic) => {
     dispatch(changeViewCheckbox(event.target.checked))
+    dispatch(changeName(event.target.surname, name, patronymic))
     //dispatch(changeViewCheckboxWithThunk(event.target.checked))
     if (event.target.checked) {
-      dispatch(changeName("Колотилова", "Надежда", "Викторовна"))
+      dispatch(addProfilToDatabase("Колотилова", "Надежда", "Викторовна"))
     }
     else {
       dispatch(changeName(""))
@@ -48,7 +49,7 @@ const Profile = (props) => {
                 onChange={handleViewCheckbox}
               />
             }
-            label={<p>Показать параметры</p>}
+            label={<p>Сохранить параметры в базу</p>}
           />
         </div>
       </div>

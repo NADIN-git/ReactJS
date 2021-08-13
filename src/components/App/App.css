@@ -52,16 +52,25 @@
   font-size: 20px;   
   background-color: #61d2fb;
   color: black;
+    
 }
 
 .Message_chats {
+  margin-bottom: 10px;
   width: 150px; 
-  
+  text-decoration: none;
   border: 3px solid #61e4fb;
   border-radius: 12px;  
   font-size: 20px;     
   text-align: center;
   color: white;
+}
+
+.Message_alignment {
+  text-align: center; 
+}
+.Message_error {
+  color: red
 }
 
 .Left_right { 
@@ -81,8 +90,7 @@
   justify-content: space-between;
 }
 .Menu_chat {   
-  width: 300px; 
- 
+  width: 300px;  
   border: 3px solid #61a4fb;
   border-radius: 12px;  
   font-size: 20px;    
@@ -108,5 +116,5 @@
   border: 2px solid var(--color-border);
   border-radius: 4px;
   margin-top: 24px;
-  color: white;
+  color: white;  
 }
