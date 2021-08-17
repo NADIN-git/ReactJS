@@ -1,4 +1,4 @@
-export function getProfile(state) {
+export function GetProfile(state) {
     return state.profile
 }
 

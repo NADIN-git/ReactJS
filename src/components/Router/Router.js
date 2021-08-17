@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router'
+import { Switch, Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import '../App/App.css'
 import Home from '../App/Home'
@@ -10,7 +10,7 @@ import News from '../News/News'
 import Login from '../Login'
 import firebase from 'firebase'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeIsAuthed } from '../../store/profile/actions'
+import { changeIsAuthed } from '../../store/profile/Actions'
 
 const PrivateRoute = (props) => {
     const isAuthed = useSelector((state) => state.profile.isAuthed)
@@ -33,11 +33,6 @@ export default function Router() {
             dispatch(changeIsAuthed(Boolean(user)))
         })
     }, [])
-
-    const handleSignOut = (e) => {
-        e.preventDefault()
-        firebase.auth().signOut()
-    }
 
     return (
         <div className="App-header">

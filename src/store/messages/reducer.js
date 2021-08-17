@@ -1,5 +1,4 @@
-//import { AUTHORS } from "./actions"
-import { ADD_MESSAGE } from "./actions";
+import { ADD_MESSAGE } from "./Actions";
 
 const initialState = {}
 

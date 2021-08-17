@@ -1,4 +1,4 @@
-import { CHANGE_IS_AUTHED, CHANGE_IS_ONLINE, CHANGE_NAME } from './actions'
+import { CHANGE_IS_AUTHED, CHANGE_IS_ONLINE, CHANGE_NAME } from './Actions'
 
 const initialState = {
     surname: "",
@@ -8,8 +8,7 @@ const initialState = {
     isAuthed: false,
 }
 
-
-export default function reducer(state = initialState, action) {
+export default function Reducer(state = initialState, action) {
     switch (action.type) {
         case CHANGE_NAME: {
             return {

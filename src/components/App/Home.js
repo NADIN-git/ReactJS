@@ -7,7 +7,7 @@ export const Home = () => {
     <div className="App-home">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
-        Здравствуйте, Мария! Практическое задание к уроку 9.
+        Здравствуйте, Мария! Практическое задание к уроку 10.
       </p>
     </div>
   )

@@ -1,12 +1,11 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-//import { addChat } from '../../store/chats/actions'
-import { addChatToDatabase, removeChatFromDatabase, subscribeChatsChangings } from '../../store/chats/actions'
+import { addChatToDatabase, removeChatFromDatabase, subscribeChatsChangings } from '../../store/chats/Actions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import Input from '../Input/Input'
-import { getChats } from "../../store/chats/selectors";
+import { getChats } from "../../store/chats/Selectors";
 import { Button } from "@material-ui/core";
 //import { IconButton } from '@material-ui/core';
 //import { Delete } from '@material-ui/core';

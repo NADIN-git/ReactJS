@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducer Change isAuthed 1`] = `
+Object {
+  "isAuthed": true,
+  "name": "",
+  "patronymic": "",
+  "surname": "",
+  "viewCheckbox": false,
+}
+`;
+
+exports[`Reducer Change surname, name, patronymic 1`] = `
+Object {
+  "isAuthed": false,
+  "name": "Надежда",
+  "patronymic": "Викторовна",
+  "surname": "Колотилова",
+  "viewCheckbox": false,
+}
+`;
+
+exports[`Reducer Change viewCheckbox 1`] = `
+Object {
+  "isAuthed": false,
+  "name": "",
+  "patronymic": "",
+  "surname": "",
+  "viewCheckbox": true,
+}
+`;

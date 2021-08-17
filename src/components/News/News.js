@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
-import { NEWS_REQUEST_STATUS } from "../../store/news/reducer"
-import { fetchNews, fetchNewsByAxios, setNewsList } from "../../store/news/actions"
-import { getNews } from "../../store/news/selectors";
+import { NEWS_REQUEST_STATUS } from "../../store/news/Reducer"
+import { fetchNews, fetchNewsByAxios, setNewsList } from "../../store/news/Actions"
+import { getNews } from "../../store/news/Selectors";
 
 export default function News(props) {
     //const { status, list } = useSelector((state) => state.news)

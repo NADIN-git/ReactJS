@@ -3,15 +3,13 @@ import Input from '../Input/Input'
 import { Redirect, useParams } from 'react-router'
 import { AUTHORS } from '../App/Constants'
 import { useDispatch, useSelector } from 'react-redux'
-//import { addMessage, addMessageWithThunk } from '../../store/messages/actions'
 import List from '@material-ui/core/List';
 import { useIsChatExists } from '../../hooks/useIsChatExists'
-import { getMesages } from "../../store/messages/selectors";
-//import { getProfile } from "../../store/profile/selectors";
+import { getMesages } from "../../store/messages/Selectors";
 import {
   sendMessageToBot,
   subscribeOnMessagesChangings,
-} from '../../store/messages/actions'
+} from '../../store/messages/Actions'
 
 
 const Messages = (props) => {
@@ -32,7 +30,6 @@ const Messages = (props) => {
       })
     )
   }
-
 
   const isChatExists = useIsChatExists({ chatId })
 

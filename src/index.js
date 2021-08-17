@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import './index.css';
-///import reportWebVitals from './reportWebVitals';
 import Router from './components/Router/Router'
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Provider } from 'react-redux'
@@ -22,7 +21,6 @@ const theme = createMuiTheme({
 });
 
 ReactDOM.render(
-
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>

@@ -3,7 +3,7 @@ import {
     SET_IDLE_STATUS,
     SET_LOADING_STATUS,
     SET_NEWS_LIST,
-} from "./actions"
+} from "./Actions"
 
 export const NEWS_REQUEST_STATUS = {
     LOADING: 'loading',

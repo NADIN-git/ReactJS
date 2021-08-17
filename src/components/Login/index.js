@@ -1,8 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
 import TextField from '@material-ui/core/TextField'
-import Checkbox from '@material-ui/core/Checkbox'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { useSelector } from 'react-redux'
 import { Button } from "@material-ui/core";
 
@@ -10,13 +8,11 @@ export default function Login(props) {
   const isAuthed = useSelector((state) => state.profile.isAuthed)
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const [error, setError] = React.useState('')
-  const [isSigningUp, setIsSigningUp] = React.useState(false)
+  const [error, setError] = React.useState('')  
 
   const handleChangeEmail = (e) => setEmail(e.target.value)
   const handleChangePassword = (e) => setPassword(e.target.value)
-  const handleIsSigningUpChange = (e) => setIsSigningUp(e.target.checked)
-
+  
   const handleLogin = async () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(email, password)
@@ -74,8 +70,7 @@ export default function Login(props) {
                 variant="filled"
               />
               <TextField
-                className="Message_border"
-                variant="outlined"
+                className="Message_border"                
                 placeholder="Пароль"
                 value={password}
                 type="text"

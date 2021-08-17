@@ -1,4 +1,4 @@
-import { ADD_CHAT, REMOVE_CHAT } from "./actions";
+import { ADD_CHAT, REMOVE_CHAT } from "./Actions";
 
 const initialState = {};
 
